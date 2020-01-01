@@ -53,19 +53,9 @@ VOID SendPost(HWND hWnd, WPARAM wParam)
 {
   HINTERNET hInternet, hConnect, hRequest;
   CHAR ip[16];
-  CHAR post[] = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
-"<api version=\"1.0\">\n"
-"  <header>\n"
-"    <function>switchMode</function>\n"
-"  </header>\n"
-"  <body>\n"
-"    <request>\n"
-"      <switchType>0</switchType>\n"
-"    </request>\n"
-"  </body>\n"
-"</api>";
+  CHAR post[] = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><api version=\"1.0\"><header><function>switchMode</function></header><body><request><switchType>0</switchType></request></body></api>";
 
-  if(LOWORD(wParam) == IDB_DEBUG) post[160] = '1';
+  if(LOWORD(wParam) == IDB_DEBUG) post[133] = '1';
   GetWindowText(hEip, ip, 16);
 
   // инициализируем WinInet
